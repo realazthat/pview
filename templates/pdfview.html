@@ -1,0 +1,146 @@
+{% autoescape None %}
+<html>
+<head>
+    
+    <style>
+        .lower-pane{
+            background-color: #ebebeb;
+            width: 98%;
+            margin-left:auto; margin-right:auto;
+        }
+        
+        .nested-table{
+            width: 100%;
+            height: 100%;
+            margin-left:auto; margin-right:auto;
+        }
+        
+        ul.thumb-bar{
+            list-style-type: none;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow-y: scroll;
+            margin:0;
+            text-align:center;
+        }
+        ul.thumb-bar > li{
+            padding: .5em;
+        }
+        .thumb-bar img{
+            width: 80%;
+            background-color: white;
+        }
+        
+        .thumb-underbar{
+            padding:.3em;
+            padding-left: 1em;
+            font-family:"Lucida Console", Monaco, monospace;
+            font-size: .8em;
+        }
+
+        ul.view-panel{
+            list-style-type: none;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow-y: scroll;
+            margin:0;
+        }
+        ul.view-panel > li{
+            padding: 1em;
+        }
+        
+        .page-frame{
+            width: 70%;
+            position: relative;
+            margin-left:auto;
+            margin-right:auto;
+        }
+        
+        .text-layer{
+            position:absolute;
+            width:100%;
+            height:100%;
+        }
+        
+        .page-frame img{
+            background-color: white;
+            /*position: absolute;*/
+            width: 100%;
+            height: auto;
+            left: 0;
+            top: 0;
+            z-index:-1;
+            
+            pointer-events: none;
+        }
+        
+        .token{
+            position: absolute;
+            z-index:2;
+            
+            border: 1px solid green;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            border-radius: 2px;
+            overflow: hidden;
+            text-overflow: clip;
+            color: transparent;
+        }
+        
+        .token::-moz-selection{
+            background:#cc0000;
+            color:#fff;
+        }
+        .token::-webkit-selection{
+            background:#cc0000;
+            color:#fff;
+        }
+        .token::selection{
+            background:#cc0000;
+            color:#fff;
+        }
+        
+    </style>
+    
+</head>
+<body>
+
+
+<div style="height:10%; padding 1em;">
+    <table class="nested-table" style="height:auto;">
+        <tr>
+            <td style="width:20%">
+                <b>{{filename}}</b>
+            </td>
+            <td style="width:auto">
+                
+            </td>
+            <td style="width:20%">
+                <b><a href="{{downloadurl}}"><button>Download original</button></a></b>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div class="lower-pane" style="height:90%">
+    <div style="width: 20%; height:100%; float:left;">
+        {{thumbbar}}
+    </div>
+    <div style="width: 80%; height:100%; float:right;">
+        <div>
+            {{viewpanel}}
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+</body>
+</html>

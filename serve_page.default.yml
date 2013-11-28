@@ -1,0 +1,24 @@
+
+
+
+
+
+
+pdftoxml: pdftoxml.exe
+pdf2json: pdf2json
+
+pdftocairo: pdftocairo
+svgo: svgo
+
+convert: convert
+
+
+thumbwidth: 300
+
+
+
+
+port: 51001
+templates: ./templates
+docs: ./docs
+
